@@ -12,7 +12,14 @@ const DEFAULT_PRODUCTS = [
 function getStore(key, defaults) {
   try {
     const stored = localStorage.getItem(key);
-    return stored ? JSON.parse(stored) : defaults;
+    if (!stored) return defaults;
+    const parsed = JSON.parse(stored);
+    // Validate: if first item lacks in_stock, reset to defaults
+    if (parsed.length > 0 && parsed[0].in_stock === undefined) {
+      localStorage.removeItem(key);
+      return defaults;
+    }
+    return parsed;
   } catch {
     return defaults;
   }
