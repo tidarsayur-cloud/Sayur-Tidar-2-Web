@@ -20,7 +20,7 @@ export default function ProductCard({ product, onAddToCart, onBuyNow, index }) {
       className="group bg-white rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col"
     >
       <div className="relative overflow-hidden bg-secondary h-52">
-        {product.image_url ? (
+        {product.https://i.pinimg.com/1200x/78/bb/fc/78bbfcc28e81444c3e47ce1f1f6d3cf1.jpg (
           <motion.img src={product.image_url} alt={product.name} className="w-full h-full object-cover" whileHover={{ scale: 1.07 }} transition={{ duration: 0.4 }} />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
