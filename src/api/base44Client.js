@@ -1,12 +1,12 @@
 // Local data store - no backend required
 
 const DEFAULT_PRODUCTS = [
-  { id: '1', name: 'Bayam Hijau', price: 3000, unit: '/ikat', description: 'Bayam segar berkualitas tinggi', image_url: '', stock: true, category: 'Sayuran', sort_order: 1 },
-  { id: '2', name: 'Kangkung', price: 2500, unit: '/ikat', description: 'Kangkung segar pilihan', image_url: '', stock: true, category: 'Sayuran', sort_order: 2 },
-  { id: '3', name: 'Wortel', price: 5000, unit: '/kg', description: 'Wortel segar manis', image_url: '', stock: true, category: 'Sayuran', sort_order: 3 },
-  { id: '4', name: 'Tomat', price: 6000, unit: '/kg', description: 'Tomat merah segar', image_url: '', stock: true, category: 'Buah', sort_order: 4 },
-  { id: '5', name: 'Cabai Merah', price: 15000, unit: '/kg', description: 'Cabai merah pedas segar', image_url: '', stock: true, category: 'Bumbu', sort_order: 5 },
-  { id: '6', name: 'Bawang Merah', price: 20000, unit: '/kg', description: 'Bawang merah pilihan', image_url: '', stock: true, category: 'Bumbu', sort_order: 6 },
+  { id: '1', name: 'Bayam Hijau', price: 3000, unit: '/ikat', description: 'Bayam segar berkualitas tinggi', image_url: '', in_stock: true, category: 'Sayuran', sort_order: 1 },
+  { id: '2', name: 'Kangkung', price: 2500, unit: '/ikat', description: 'Kangkung segar pilihan', image_url: '', in_stock: true, category: 'Sayuran', sort_order: 2 },
+  { id: '3', name: 'Wortel', price: 5000, unit: '/kg', description: 'Wortel segar manis', image_url: '', in_stock: true, category: 'Sayuran', sort_order: 3 },
+  { id: '4', name: 'Tomat', price: 6000, unit: '/kg', description: 'Tomat merah segar', image_url: '', in_stock: true, category: 'Buah', sort_order: 4 },
+  { id: '5', name: 'Cabai Merah', price: 15000, unit: '/kg', description: 'Cabai merah pedas segar', image_url: '', in_stock: true, category: 'Bumbu', sort_order: 5 },
+  { id: '6', name: 'Bawang Merah', price: 20000, unit: '/kg', description: 'Bawang merah pilihan', image_url: '', in_stock: true, category: 'Bumbu', sort_order: 6 },
 ];
 
 function getStore(key, defaults) {
