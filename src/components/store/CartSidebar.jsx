@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Trash2, ShoppingBag, MessageCircle } from "lucide-react";
 
-const WHATSAPP_NUMBER = "628XXXXXXXXXX";
+const WHATSAPP_NUMBER = "6287762466790";
 
 function formatRupiah(n) {
   return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(n);
