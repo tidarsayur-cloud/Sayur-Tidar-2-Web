@@ -25,7 +25,7 @@ export default function Home() {
   const totalItems = cart.reduce((s, i) => s + i.qty, 0);
 
   const addToCart = (product) => {
-    if (!product.stock) return;
+    if (!product.in_stock) return;
     setCart((prev) => {
       const existing = prev.find((i) => i.id === product.id);
       if (existing) return prev.map((i) => i.id === product.id ? { ...i, qty: i.qty + 1 } : i);
@@ -39,8 +39,16 @@ export default function Home() {
     setCart((prev) => prev.filter((i) => i.id !== productId));
   };
 
+  const updateQty = (productId, newQty) => {
+    if (newQty < 1) {
+      removeFromCart(productId);
+      return;
+    }
+    setCart((prev) => prev.map((i) => i.id === productId ? { ...i, qty: newQty } : i));
+  };
+
   const buyNow = (product) => {
-    const msg = `Halo, saya ingin memesan *${product.name}* (${product.price.toLocaleString('id-ID')})\nJumlah: 1`;
+    const msg = `Halo, saya ingin memesan *${product.name}* (${product.unit}) seharga Rp${product.price.toLocaleString('id-ID')}.`;
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
@@ -54,7 +62,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar cartCount={totalItems} onCartOpen={() => setCartOpen(true)} />
-
       <main>
         <HeroSection />
         <PromoSection />
@@ -67,14 +74,13 @@ export default function Home() {
         <AboutSection />
         <ContactSection />
       </main>
-
       <Footer />
-
       <CartSidebar
         cart={cart}
         isOpen={cartOpen}
         onClose={() => setCartOpen(false)}
         onRemove={removeFromCart}
+        onUpdateQty={updateQty}
         onCheckout={checkout}
       />
     </div>
