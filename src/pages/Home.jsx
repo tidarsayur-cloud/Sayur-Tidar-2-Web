@@ -11,7 +11,7 @@ import ContactSection from "@/components/store/ContactSection";
 import CartSidebar from "@/components/store/CartSidebar";
 import Footer from "@/components/store/Footer";
 
-const WA_NUMBER = "628XXXXXXXXXX";
+const WA_NUMBER = "6287762466790";
 
 export default function Home() {
   const [cart, setCart] = useState([]);
