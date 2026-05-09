@@ -4,7 +4,7 @@ import { base44 } from "@/api/base44Client";
 import { Loader2 } from "lucide-react";
 import ProductCard from "./ProductCard";
 
-const WHATSAPP_NUMBER = "628XXXXXXXXXX";
+const WHATSAPP_NUMBER = "6287762466790";
 
 function formatRupiah(n) {
   return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(n);
