@@ -1,0 +1,41 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nama produk sayur"
+    },
+    "price": {
+      "type": "number",
+      "description": "Harga produk dalam Rupiah"
+    },
+    "unit": {
+      "type": "string",
+      "description": "Satuan produk, misal /ikat, /250g, /buah"
+    },
+    "description": {
+      "type": "string",
+      "description": "Deskripsi singkat produk"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL gambar produk"
+    },
+    "in_stock": {
+      "type": "boolean",
+      "default": true,
+      "description": "Status ketersediaan stok"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["Sayuran Hijau", "Umbi & Akar", "Buah Sayur", "Paket"],
+      "description": "Kategori produk"
+    },
+    "sort_order": {
+      "type": "number",
+      "description": "Urutan tampil produk"
+    }
+  },
+  "required": ["name", "price", "unit"]
+}
