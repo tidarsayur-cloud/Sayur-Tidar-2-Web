@@ -20,12 +20,23 @@ export default function ProductCard({ product, onAddToCart, onBuyNow, index }) {
       className="group bg-white rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col"
     >
       <div className="relative overflow-hidden bg-secondary h-52">
-        {product.https://i.pinimg.com/1200x/78/bb/fc/78bbfcc28e81444c3e47ce1f1f6d3cf1.jpg (
-          <motion.img src={product.image_url} alt={product.name} className="w-full h-full object-cover" whileHover={{ scale: 1.07 }} transition={{ duration: 0.4 }} />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <Package className="w-16 h-16 text-muted-foreground/30" />
-          </div>
+  {product.image_url ? (
+    <motion.img
+      src={product.image_url}
+      alt={product.name}
+      className="w-full h-full object-cover"
+      whileHover={{ scale: 1.07 }}
+      transition={{ duration: 0.4 }}
+    />
+  ) : (
+    /* Fallback image or placeholder if product.image_url is missing */
+    <img 
+      src="https://i.pinimg.com/1200x/78/bb/fc/78bbfc28e81444c3e47ce1f1f6d3cf1.jpg" 
+      alt="Placeholder"
+      className="w-full h-full object-cover opacity-50"
+    />
+  )}
+</div>
         )}
         <div className={`absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold border ${product.in_stock ? "bg-white/90 text-pea-dark border-pea-shoot/30" : "bg-white/90 text-destructive border-destructive/30"}`}>
           {product.in_stock ? "● Tersedia" : "● Habis"}
